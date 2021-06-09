@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_1qxiuqj" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <decision id="redirect" name="redirect1">
+    <informationRequirement id="InformationRequirement_0ur4ax0">
+      <requiredInput href="#InputData_1w12zcg" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_06z97dz" hitPolicy="FIRST" biodi:annotationsWidth="400">
+      <input id="Input_1" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>ProblemType</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="responsibleAgent" typeRef="string" biodi:width="298" />
+      <rule id="DecisionRule_1vapkcd">
+        <description></description>
+        <inputEntry id="UnaryTests_1twdpul">
+          <text>"Order"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16cd0vv">
+          <text>"sales"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t7djcz">
+        <inputEntry id="UnaryTests_0a18tf8">
+          <text>"PlantCare"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p3ywst">
+          <text>"gardener"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07o33dg">
+        <inputEntry id="UnaryTests_0kil34x">
+          <text>"Event"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h7zyk4">
+          <text>"eventmanager"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bp7vqs">
+        <inputEntry id="UnaryTests_1mubwy3">
+          <text>"Product"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1elto15">
+          <text>"productmanager"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1w12zcg" name="Choice" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="redirect">
+        <dc:Bounds height="80" width="180" x="730" y="200" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_00ncpz7" dmnElementRef="InputData_1w12zcg">
+        <dc:Bounds height="45" width="125" x="757" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1s6b47w" dmnElementRef="InformationRequirement_0ur4ax0">
+        <di:waypoint x="820" y="337" />
+        <di:waypoint x="820" y="300" />
+        <di:waypoint x="820" y="280" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
